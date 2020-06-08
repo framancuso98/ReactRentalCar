@@ -81,7 +81,7 @@ class ListaUtenti extends React.Component {
       <div>
         <Navbar />
         <h1>LISTA UTENTI</h1>
-        <table>
+        <table className="table table-hover table-dark">
           <thead>
             <tr>
               <th>#</th>
@@ -104,13 +104,13 @@ class ListaUtenti extends React.Component {
                 <td>{utente.data_nascita}</td>
                 <td>{utente.ruoloId}</td>
                 <td>
-                  <button onClick={this.eliminaUtente.bind(this, utente.id)}>
+                  <button type="button" className="btn btn-outline-danger"onClick={this.eliminaUtente.bind(this, utente.id)}>
                     Elimina
                   </button>
                 </td>
                 <td>
                   <Link to ={`/utente/${utente.id}`} >
-                    <button onClick={this.modificaUtente.bind(this, utente.id)}>
+                    <button type="button" className="btn btn-outline-warning" onClick={this.modificaUtente.bind(this, utente.id)}>
                       Modifica
                   </button>
                   </Link>

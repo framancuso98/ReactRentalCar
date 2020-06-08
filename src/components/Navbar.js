@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import './Navbar.css'
 
 class Navbar extends React.Component {
   
@@ -23,7 +23,7 @@ logout(){
     return (
       <div >
         <nav className="navbar navbar-expand-lg ">
-          Navbar
+          <p className="nav-link">Navbar</p>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -31,41 +31,41 @@ logout(){
             <ul className="navbar-nav">
               <Link to="/home">
                 <li className="nav-item active">
-                  Home 
+                  <p className="nav-link">Home</p>
                 </li>
               </Link>
               <Link to="allUtenti">
                 <li className="nav-item">
-                  Lista Utenti
+                <p className="nav-link">Lista Utenti</p> 
                 </li>
               </Link>
               <Link to="addUtente">
                 <li className="nav-item">
-                  Aggiungi Utente
+                <p className="nav-link">Aggiungi Utente</p>
                 </li>
               </Link>
               <Link to="allAuto">
                 <li className="nav-item">
-                  Lista Auto
+                <p className="nav-link">Lista Auto</p>
                 </li>
               </Link>
               <Link to="addAuto">
                 <li className="nav-item">
-                  Aggiungi Auto
+                <p className="nav-link">Aggiungi Auto</p> 
                   
                 </li>
               </Link>
               <Link to="allPrenotazioni">
                 <li className="nav-item">
-                  Lista Prenotazioni
+                <p className="nav-link">Lista Prenotazioni</p>
                   
                 </li>
               </Link>
               <Link to="">
-              <button onClick = {this.logout}>
-                Logout
+              <button type="button" className="btn btn-dark" onClick = {this.logout}>
+              Logout
               </button>
-</Link>
+              </Link>
 
             </ul>
           </div>

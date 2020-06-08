@@ -72,7 +72,7 @@ class ListaPrenotazioni extends React.Component {
       <div >
         <Navbar />
         <h1>ListaPrenotazioni!</h1>
-        <table>
+        <table className="table table-hover table-dark">
           <thead>
             <tr>
               <th>#</th>
@@ -103,12 +103,12 @@ class ListaPrenotazioni extends React.Component {
                 <td>{prenotazione.utente.data_nascita}</td>
                 <td>{prenotazione.stato}</td>
                 <td>
-                  <button onClick={this.accettaPrenotazione.bind(this, prenotazione.id)} >
+                  <button type="button" className="btn btn-success" onClick={this.accettaPrenotazione.bind(this, prenotazione.id)} >
                     Accetta
                   </button>
                 </td>
                 <td>
-                  <button onClick={this.rifiutaPrenotazione.bind(this, prenotazione.id)} >
+                  <button type="button" className="btn btn-danger" onClick={this.rifiutaPrenotazione.bind(this, prenotazione.id)} >
                     Rifiuta
                   </button>
                 </td>

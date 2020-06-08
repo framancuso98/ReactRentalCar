@@ -1,7 +1,8 @@
 import React from 'react';
 import AutoDataService from '../services/auto.service';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Navbar from './Navbar';
+import Login from './Login';
 
 class ListaAuto extends React.Component {
   
@@ -60,7 +61,7 @@ class ListaAuto extends React.Component {
       <div>
         <Navbar />
         <h1>LISTA AUTO</h1>
-        <table>
+        <table className="table table-hover table-dark" >
           <thead>
             <tr>
               <th>#</th>
@@ -83,13 +84,13 @@ class ListaAuto extends React.Component {
                 <td>{auto.anno}</td>
                 <td>{auto.categoriumId}</td>
                 <td>
-                  <button onClick={this.eliminaAuto.bind(this, auto.id)}>
+                  <button type="button" className="btn btn-outline-danger" onClick={this.eliminaAuto.bind(this, auto.id)}>
                     Elimina
                   </button>
                 </td>
                 <td>
                   <Link to ={`/auto/${auto.id}`} >
-                    <button onClick={this.modificaAuto.bind(this, auto.id)}>
+                    <button type="button" className="btn btn-outline-warning" onClick={this.modificaAuto.bind(this, auto.id)}>
                       Modifica
                   </button>
                   </Link>
@@ -99,7 +100,8 @@ class ListaAuto extends React.Component {
           </tbody>
         </table>
       </div>
-    );
+     );
+
   }
 }
 

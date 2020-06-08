@@ -1,11 +1,24 @@
 import http from '../http-common';
 import authHeaders from './authHeader';
+import { Redirect } from 'react-router-dom';
+
+function isAuth() {
+
+    const utente = localStorage.getItem("utente");
+    if (utente){
+      console.log("true")
+      return true;
+    } else {
+      console.log("false")
+      return false;
+    }
+  }
 
 class UtenteDataService {
 
     getAll() {
         console.log("GET ALL UTENTI");
-        return http.get("/utente/all", { headers: authHeaders() });
+        return http.get("/utente/all", { headers: authHeaders() } );
     }
 
     delete(id) {
